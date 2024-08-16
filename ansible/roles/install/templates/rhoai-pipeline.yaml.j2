@@ -21,7 +21,7 @@ spec:
     - name: working_dir
       default: /data/edge1/
     tasks:
-    - name: load_data
+    - name: load-data
       params:
       - name: aws_access_key
         value: $(params.aws_access_key)
@@ -103,15 +103,15 @@ spec:
             elyra/pipeline-name: retrain
             elyra/pipeline-version: ''
             elyra/experiment-name: ''
-            elyra/node-name: load_data
+            elyra/node-name: load-data
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             elyra/node-file-name: step-01.ipynb
             elyra/pipeline-source: retrain.pipeline
-            pipelines.kubeflow.org/task_display_name: load_data
+            pipelines.kubeflow.org/task_display_name: load-data
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Load Data",
               "outputs": [], "version": "Run a file@sha256=170a691197740fb41dc687dab1be34b8cab469e8fafd24494d61b484533b9b0f"}'
-    - name: create_model
+    - name: create-model
       params:
       - name: working_dir
         value: $(params.working_dir)
@@ -173,17 +173,17 @@ spec:
             elyra/pipeline-name: retrain
             elyra/pipeline-version: ''
             elyra/experiment-name: ''
-            elyra/node-name: create_model
+            elyra/node-name: create-model
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             elyra/node-file-name: step-02.ipynb
             elyra/pipeline-source: retrain.pipeline
-            pipelines.kubeflow.org/task_display_name: create_model
+            pipelines.kubeflow.org/task_display_name: create-model
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Create Model",
               "outputs": [], "version": "Run a file@sha256=ee71534e62e0af8d27defee34e508b2f3ccbb855f8feebab8dc9f02b06c1571d"}'
       runAfter:
-      - load_data
-    - name: push_model
+      - load-data
+    - name: push-model
       params:
       - name: aws_access_key
         value: $(params.aws_access_key)
@@ -270,16 +270,16 @@ spec:
             elyra/pipeline-name: retrain
             elyra/pipeline-version: ''
             elyra/experiment-name: ''
-            elyra/node-name: push_model
+            elyra/node-name: push-model
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             elyra/node-file-name: step-03.ipynb
             elyra/pipeline-source: retrain.pipeline
-            pipelines.kubeflow.org/task_display_name: push_model
+            pipelines.kubeflow.org/task_display_name: push-model
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Push Model",
               "outputs": [], "version": "Run a file@sha256=650cac7105cc33e7efc4c3a378fdf265ae702f84b25f727a816986154eb1e78b"}'
       runAfter:
-      - create_model
+      - create-model
 
 ---
 apiVersion: triggers.tekton.dev/v1alpha1
