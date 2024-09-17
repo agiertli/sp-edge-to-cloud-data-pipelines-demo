@@ -478,12 +478,12 @@
         <to uri="{{mqtt.uri.monitor}}"/>
     </route> -->
 
-<!--     <route>
+     <route>
         <from uri="direct:mqtt-publish"/>
         <log message="dummy mqtt-publish"/>
-    </route> -->
+    </route> 
 
-    <route>
+<!--    <route>
         <from uri="direct:mqtt-publish"/>
 
         <setBody>
@@ -492,8 +492,9 @@
 
         <log message="sending monitor MQTT message: ${body}"/>
         <to uri="{{mqtt.uri.monitor}}"/>
-
+-->
         <!-- if client is MQTT we respond back -->
+<!--         
         <when>
             <simple>${exchangeProperty.topic-response} != null</simple>
      
@@ -506,7 +507,7 @@
             <to uri="{{mqtt.uri.monitor}}"/>
         </when>
     </route>
-
+-->
 
     <route id="zip-service">
         <from uri="platform-http:/zip"/>
