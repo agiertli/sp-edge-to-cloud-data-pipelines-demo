@@ -150,3 +150,35 @@ Create the route to the instance (needs to match the name of the service)
 ```
 oc create route edge camel-edge --service shopper
 ```
+
+# Keycloak integration to this component
+
+## Overview
+
+The goal of this exercise is to demostrate the power of Keycloak in the easiness of protecting application with both login screen and authorization policies. 
+
+## How to
+
+To run locally: 
+```
+mvn quarkus:dev
+```
+Then open the dev UI and navigate to Keycloak tab - in realm quarkus2 create new user.
+Try to get to the http://localhost:8080 and then you are presented with keycloak login screen
+You have permission to view the index.html page, but after other pages are forbidden to see.
+
+### Managing access to pages
+Access is managed directly in keycloak at quarkus2 realm in client edge-shopper tab Authorization.
+
+You need to create Resource with exact URI and then create permission and policy that will allow user to get to specific resource. 
+Now is the time to experiment about every aspect of Keycloak Authorization
+
+## How to run on Openshift
+
+- you need to install keycloak and import src/main/resources/quarkus2-realm.json. 
+- fill in this property (ENV variable according to quarkus documentation should be fine ):
+```
+quarkus.oidc.auth-server-url=<URL of the Keycloak quarkus2 realm>
+```
+
+
