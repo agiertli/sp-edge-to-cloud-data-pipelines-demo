@@ -43,7 +43,7 @@ metadata:
     # app.openshift.io/connects-to: tf-server
     app.openshift.io/connects-to: >-
       ["tf-server",{"apiVersion":"apps/v1","kind":"Deployment","name":"price-engine"}]
-    
+
   labels:
     app.kubernetes.io/name: shopper
     app.kubernetes.io/version: 1.0.0
@@ -74,8 +74,13 @@ spec:
                   fieldPath: metadata.namespace
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
+            - name: QUARKUS_OIDC_AUTH_SERVER_URL
+              value: http://keycloak-keycloak.apps.cluster-qzsg7.qzsg7.sandbox1935.opentlc.com/realms/quarkus2
           # image: quay.io/bmesegue/testshopper:1.0.0
-          image: quay.io/redhatintegration/sp-ai-camel-shopper:1.0.0
+          # agiertli image = for keycloak part
+          # redhatintegration image = for non-keycloak part
+          # image: quay.io/redhatintegration/sp-ai-camel-shopper:1.0.0
+          image: quay.io/agiertli/shopper-keycloak:1.0.0
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
