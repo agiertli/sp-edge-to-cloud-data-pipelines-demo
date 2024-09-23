@@ -3,7 +3,7 @@ oc process -f postgresql-persistent.yaml \
     -p POSTGRESQL_PASSWORD=keycloak \
     -p NAMESPACE=openshift \
     -p POSTGRESQL_DATABASE=keycloak \
-| oc apply -f - -n ai-roadshow
+| oc apply -f - -n keycloak
 
 
 oc process -f keycloak.yaml \
@@ -12,4 +12,4 @@ oc process -f keycloak.yaml \
     -p KEYCLOAK_DB_PASSWORD=keycloak \
     -p KEYCLOAK_DB_USERNAME=keycloak \
     -p NAMESPACE=keycloak \
-| oc apply -f - -n ai-roadshow
+| oc apply -f - -n keycloak
