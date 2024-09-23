@@ -76,7 +76,15 @@ objects:
                   value: "${KEYCLOAK_ADMIN}"
                 - name: KEYCLOAK_ADMIN_PASSWORD
                   value: "${KEYCLOAK_ADMIN_PASSWORD}"
-                - name: KC_PROXY
+                - name: KC_DB
+                  value: "postgres"
+                - name: KC_DB_PASSWORD
+                  value: "${KEYCLOAK_DB_PASSWORD}"
+                - name: KC_DB_USERNAME
+                  value: "${KEYCLOAK_DB_USERNAME}"
+                - name: KC_DB_URL
+                  value: "${KEYCLOAK_DB_URL}"
+                - name: KC_PROXY 
                   value: "edge"
               image: quay.io/mabartos/keycloak-adaptive-all:latest
               livenessProbe:
@@ -119,6 +127,19 @@ parameters:
     description: Keycloak Server administrator username
     generate: expression
     from: "[a-zA-Z0-9]{8}"
+    required: true
+  - description: The name of the OpenShift Service exposed for the database.
+    displayName: Database Service Name
+    name: KEYCLOAK_DB_URL
+    required: true
+    value: jdbc:postgresql://postgresql:5432/keycloak
+  - description: Username for PostgreSQL user that will be used for accessing the database.
+    displayName: PostgreSQL Connection Username
+    name: KEYCLOAK_DB_USERNAME
+    required: true
+  - description: Password for the PostgreSQL connection user.
+    displayName: PostgreSQL Connection Password
+    name: KEYCLOAK_DB_PASSWORD
     required: true
   - name: KEYCLOAK_ADMIN_PASSWORD
     displayName: Keycloak Administrator Password
