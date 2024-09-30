@@ -36,19 +36,7 @@ objects:
       host: "${HOSTNAME}"
       tls:
         termination: edge
-      to:
-        name: "${APPLICATION_NAME}"
-  - apiVersion: v1
-    id: "${APPLICATION_NAME}"
-    kind: Route
-    metadata:
-      annotations:
-        description: Route for application's service.
-      labels:
-        application: "${APPLICATION_NAME}"
-      name: "${APPLICATION_NAME}"
-    spec:
-      host: "${HOSTNAME}"
+        insecureEdgeTerminationPolicy: Allow
       to:
         name: "${APPLICATION_NAME}"
   - apiVersion: v1
