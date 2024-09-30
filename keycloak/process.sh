@@ -1,3 +1,4 @@
+oc new-project keycloak
 oc process -f postgresql-persistent.yaml \
     -p POSTGRESQL_USER=keycloak \
     -p POSTGRESQL_PASSWORD=keycloak \
