@@ -75,12 +75,12 @@ spec:
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
             - name: QUARKUS_OIDC_AUTH_SERVER_URL
-              value: http://keycloak-keycloak.apps.cluster-f7ztn.f7ztn.sandbox2784.opentlc.com/realms/quarkus2
+              value: http://keycloak-keycloak.apps.cluster-4spkl.4spkl.sandbox2712.opentlc.com/realms/quarkus2
           # image: quay.io/bmesegue/testshopper:1.0.0
           # agiertli image = for keycloak part
           # redhatintegration image = for non-keycloak part
-          image: quay.io/redhatintegration/sp-ai-camel-shopper:1.0.0
-          #image: quay.io/agiertli/shopper-keycloak:1.0.0
+          #image: quay.io/redhatintegration/sp-ai-camel-shopper:1.0.0
+          image: quay.io/agiertli/shopper-keycloak:1.0.0
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
