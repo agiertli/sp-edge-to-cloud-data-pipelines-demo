@@ -36,19 +36,7 @@ objects:
       host: "${HOSTNAME}"
       tls:
         termination: edge
-      to:
-        name: "${APPLICATION_NAME}"
-  - apiVersion: v1
-    id: "${APPLICATION_NAME}"
-    kind: Route
-    metadata:
-      annotations:
-        description: Route for application's service.
-      labels:
-        application: "${APPLICATION_NAME}"
-      name: "${APPLICATION_NAME}"
-    spec:
-      host: "${HOSTNAME}"
+        insecureEdgeTerminationPolicy: Allow
       to:
         name: "${APPLICATION_NAME}"
   - apiVersion: v1
@@ -84,7 +72,7 @@ objects:
                   value: "${KEYCLOAK_DB_USERNAME}"
                 - name: KC_DB_URL
                   value: "${KEYCLOAK_DB_URL}"
-                - name: KC_PROXY 
+                - name: KC_PROXY
                   value: "edge"
               image: quay.io/mabartos/keycloak-adaptive-all:latest
               livenessProbe:
