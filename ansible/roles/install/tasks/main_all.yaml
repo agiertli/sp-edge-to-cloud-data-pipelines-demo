@@ -1,4 +1,3 @@
-
 - name: Provision AMQ Streams
   ansible.builtin.include_tasks: provision_streams.yaml
   vars:
@@ -9,7 +8,8 @@
   ansible.builtin.include_tasks: provision_camelk.yaml
   vars:
     operators_project: "workshop-operators"
-    snapshot_operator_project: "openshift-marketplace"
+    snapshot_operator_project:
+      "openshift-marketplace"
 
       # - name: Provision OpenShift Dev Spaces
       #   include_tasks: provision_devspaces.yaml
@@ -47,12 +47,14 @@
   vars:
     central_namespace: central
 
+- name: Provision filestash S3 viewer
+  include_tasks: provision_filestash.yaml
+
 - name: Provision Edge1 infra
   include_tasks: provision_edge.yaml
   vars:
     edge_namespace: edge1
     odf_project: openshift-storage
-
 # - name: Provision Edge2 infra
 #   include_tasks: provision_edge.yaml
 #   vars:
