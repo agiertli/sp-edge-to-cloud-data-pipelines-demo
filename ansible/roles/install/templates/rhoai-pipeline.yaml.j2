@@ -21,7 +21,7 @@ spec:
     - name: working_dir
       default: /data/edge1/
     tasks:
-    - name: run-a-file
+    - name: load-training-data
       params:
       - name: aws_access_key
         value: $(params.aws_access_key)
@@ -111,7 +111,7 @@ spec:
             pipelines.kubeflow.org/task_display_name: load_data
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Run a file",
               "outputs": [], "version": "Run a file@sha256=6ab49e341fb03f61f629bb637b42172da9ed78e10da72b33491425c1257bd35f"}'
-    - name: run-a-file-2
+    - name: train-the-model
       params:
       - name: working_dir
         value: $(params.working_dir)
@@ -182,8 +182,8 @@ spec:
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Run a file",
               "outputs": [], "version": "Run a file@sha256=9b39434f0b41dc6ec0bfb45076f78e1625296098bedbeb80ae26de2cbe1c930c"}'
       runAfter:
-      - run-a-file
-    - name: run-a-file-3
+      - load-training-data
+    - name: upload-model-to-s3
       params:
       - name: aws_access_key
         value: $(params.aws_access_key)
@@ -279,7 +279,7 @@ spec:
             pipelines.kubeflow.org/component_spec_digest: '{"name": "Run a file",
               "outputs": [], "version": "Run a file@sha256=0db97569c01490338470f30bf1f2c21900479b20f5cffc30f2d31d2e6a50248d"}'
       runAfter:
-      - run-a-file-2
+      - train-the-model
 
 ---
 apiVersion: triggers.tekton.dev/v1alpha1
