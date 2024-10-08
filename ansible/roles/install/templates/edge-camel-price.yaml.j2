@@ -25,6 +25,12 @@ data:
           "item": "other",
           "label": "Other",
           "price": "N/A"
+        },
+
+        {
+          "item": "hotalka",
+          "label": "Horalka",
+          "price": 0.63
         }
     ]
 ---
@@ -56,11 +62,11 @@ spec:
 
             <route id="get-item">
                 <from uri="platform-http:/item"/>
-                
+
                 <unmarshal>
                     <json/>
                 </unmarshal>
-                
+
                 <!-- Find item for product -->
                 <setHeader name="product">
                     <simple>${body[product]}</simple>
@@ -83,7 +89,7 @@ spec:
                 <from uri="platform-http:/price"/>
 
                 <to uri="direct:load-catalogue"/>
-                
+
                 <setBody>
                     <jsonpath>$[?(@.item == '${header.item}')]</jsonpath>
                 </setBody>
@@ -93,7 +99,7 @@ spec:
                 <setBody>
                     <simple>${body[0]}</simple>
                 </setBody>
-                
+
                 <choice>
                     <when>
                         <simple>${body[item]} == "other"</simple>
