@@ -1,0 +1,23 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://api.cluster-xdndt.xdndt.sandbox1950.opentlc.com:6443
+  name: api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+contexts:
+- context:
+    cluster: api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+    namespace: default
+    user: admin/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+  name: default/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+    namespace: edge1
+    user: admin/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+  name: edge1/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443/admin
+current-context: edge1/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443/admin
+kind: Config
+preferences: {}
+users:
+- name: admin/api-cluster-xdndt-xdndt-sandbox1950-opentlc-com:6443
+  user:
+    token: sha256~_8cY8F9s2K5JbB6ed5hEORWWZ4o-2ysVQ9Vp4qMwH2w

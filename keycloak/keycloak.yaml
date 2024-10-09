@@ -29,6 +29,9 @@ objects:
     metadata:
       annotations:
         description: Route for application's service.
+        haproxy.router.openshift.io/hsts_header: max-age=0;Cache-Control=no-cache
+        haproxy.router.openshift.io/disable_caching: "true"
+        haproxy.router.openshift.io/disable_cookies: "true"
       labels:
         application: "${APPLICATION_NAME}"
       name: "${APPLICATION_NAME}-https"
