@@ -1,18 +1,26 @@
-html, body{
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow: hidden;
 }
 
-#camera, #camera--view, #camera--sensor, #camera--output{
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
     position: fixed;
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-#camera--view, #camera--sensor, #camera--output{
+#camera--view,
+#camera--sensor,
+#camera--output {
     /*transform: scaleX(-1);*/
     /*filter: FlipH;*/
 }
@@ -34,7 +42,10 @@ html, body{
     z-index:1;
 }
 */
-#btn-index, #btn-view1, #btn-view2, #btn-view3{
+#btn-index,
+#btn-view1,
+#btn-view2,
+#btn-view3 {
     width: 75px;
     /*height: 50px;*/
     background-color: grey;
@@ -44,15 +55,18 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 15px;
     left: 15px;
     box-shadow: 0 5px #666;
-    z-index:1;
+    z-index: 1;
 }
 
-#btn-train-data, #btn-sim-unzip, #btn-sim-pipeline-start, #btn-sim-pipeline-end{
+#btn-train-data,
+#btn-sim-unzip,
+#btn-sim-pipeline-start,
+#btn-sim-pipeline-end {
     width: 150px;
     background-color: grey;
     color: white;
@@ -61,35 +75,37 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 15px;
     left: 15px;
     box-shadow: 0 5px #666;
-    z-index:1;
+    z-index: 1;
 }
 
 #btn-train-data:active,
-#btn-sim-unzip:active, 
+#btn-sim-unzip:active,
 #btn-sim-pipeline-start:active,
 #btn-sim-pipeline-end:active,
-#btn-view1:active,#btn-view2:active,#btn-view3:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+#btn-view1:active,
+#btn-view2:active,
+#btn-view3:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
-#lbl-category{
-  text-align:center;
-  position: fixed;
-  left: 50%;
-  top:20%;
-  transform: translate(-50%, 0);
-  color: white;
-  font-size: 30;
+#lbl-category {
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, 0);
+    color: white;
+    font-size: 30;
 }
 
-#btn-detection{
+#btn-detection {
     width: 200px;
     background-color: black;
     color: white;
@@ -98,14 +114,14 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
-    bottom: calc(50%);
+    bottom: calc(60%);
     left: calc(50% - 100px);
     box-shadow: 0 5px #666;
 }
 
-#btn-ingestion{
+#btn-ingestion {
     width: 200px;
     background-color: black;
     color: white;
@@ -114,30 +130,30 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
-    bottom: calc(50% - 60px);
+    bottom: calc(60% - 60px);
     left: calc(50% - 100px);
     box-shadow: 0 5px #666;
 }
 
-#btn-monitor{
+#btn-monitor {
     width: 200px;
-    background-color: black;
+    background-color: #9a9a9a;
     color: white;
     font-size: 16px;
     border-radius: 30px;
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: calc(50% - 150px);
     left: calc(50% - 100px);
     box-shadow: 0 5px #666;
 }
 
-#camera--trigger{
+#camera--trigger {
     width: 200px;
     background-color: black;
     color: white;
@@ -146,14 +162,15 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 90px;
     left: calc(50% - 100px);
     box-shadow: 0 5px #666;
 }
 
-#product,#product-ok{
+#product,
+#product-ok {
     /*width: 200px;*/
     /*background-color: black;*/
     /*color: white;*/
@@ -168,7 +185,6 @@ html, body{
     /*left: calc(50% - 100px);*/
     /*box-shadow: 0 5px #666;*/
 }
-
 
 /*#btn-send{
     width: 200px;
@@ -186,13 +202,15 @@ html, body{
     box-shadow: 0 5px #666;
 }*/
 
-#camera--trigger:active, #btn-send:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+#camera--trigger:active,
+#btn-send:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
-#device--trigger,#btn-send{
+#device--trigger,
+#btn-send {
     width: 200px;
     background-color: black;
     color: white;
@@ -201,7 +219,7 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 30px;
     left: calc(50% - 100px);
@@ -209,12 +227,12 @@ html, body{
 }
 
 #device--trigger:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
-#protocol--http{
+#protocol--http {
     width: 150px;
     background-color: black;
     color: white;
@@ -223,7 +241,7 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 75px;
     right: 150px;
@@ -231,12 +249,12 @@ html, body{
 }
 
 #protocol--http:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
-#protocol--mqtt{
+#protocol--mqtt {
     width: 150px;
     background-color: black;
     color: white;
@@ -245,7 +263,7 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 15px;
     right: 150px;
@@ -253,19 +271,19 @@ html, body{
 }
 
 #protocol--mqtt:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }
 
-#protocol--mqtt:disabled{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  pointer-events: none;
+#protocol--mqtt:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    pointer-events: none;
 }
 
-#message--banner{
+#message--banner {
     width: 150px;
     /* background-color: black;
     color: white; */
@@ -276,18 +294,18 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     /* top: 80px; */
     top: 30%;
     /* right: 50%; */
     /* right: 150px; */
     left: calc(50% - 100px);
-    opacity:0;
+    opacity: 0;
 }
 
- #product-picker {
-/*        margin-bottom: 10px;
+#product-picker {
+    /*        margin-bottom: 10px;
         margin-top: 10px;
         font-family: cursive, sans-serif;
         outline: 0;
@@ -305,7 +323,7 @@ html, body{
     border: none;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     /*bottom: 300px;*/
     bottom: calc(50%);
@@ -313,75 +331,71 @@ html, body{
     box-shadow: 0 5px #666;
 
     /*opacity:0.5;*/
+}
 
-
-      }
-
-
-.taken{
-    height: 100px!important;
-    width: 100px!important;
+.taken {
+    height: 100px !important;
+    width: 100px !important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     top: 20px;
     right: 20px;
     z-index: 2;
 }
 
-
 /* In order to fade an HTML element out, then paste the following code in your CSS block: */
 
 .fade-out {
-  animation: fadeOut ease 8s;
-  -webkit-animation: fadeOut ease 8s;
-  -moz-animation: fadeOut ease 8s;
-  -o-animation: fadeOut ease 8s;
-  -ms-animation: fadeOut ease 8s;
+    animation: fadeOut ease 8s;
+    -webkit-animation: fadeOut ease 8s;
+    -moz-animation: fadeOut ease 8s;
+    -o-animation: fadeOut ease 8s;
+    -ms-animation: fadeOut ease 8s;
 }
 @keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @-moz-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @-webkit-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @-o-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @-ms-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-}
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .fade-in {
@@ -390,48 +404,48 @@ html, body{
     -moz-animation: fadeIn ease 10s;
     -o-animation: fadeIn ease 10s;
     -ms-animation: fadeIn ease 10s;
-  }
-  @keyframes fadeIn {
+}
+@keyframes fadeIn {
     0% {
-      opacity:0;
+        opacity: 0;
     }
     100% {
-      opacity:1;
+        opacity: 1;
     }
-  }
-  
-  @-moz-keyframes fadeIn {
+}
+
+@-moz-keyframes fadeIn {
     0% {
-      opacity:0;
+        opacity: 0;
     }
     100% {
-      opacity:1;
+        opacity: 1;
     }
-  }
-  
-  @-webkit-keyframes fadeIn {
+}
+
+@-webkit-keyframes fadeIn {
     0% {
-      opacity:0;
+        opacity: 0;
     }
     100% {
-      opacity:1;
+        opacity: 1;
     }
-  }
-  
-  @-o-keyframes fadeIn {
+}
+
+@-o-keyframes fadeIn {
     0% {
-      opacity:0;
+        opacity: 0;
     }
     100% {
-      opacity:1;
+        opacity: 1;
     }
-  }
-  
-  @-ms-keyframes fadeIn {
+}
+
+@-ms-keyframes fadeIn {
     0% {
-      opacity:0;
+        opacity: 0;
     }
     100% {
-      opacity:1;
-  }
+        opacity: 1;
+    }
 }
