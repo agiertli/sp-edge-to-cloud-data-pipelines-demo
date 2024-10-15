@@ -153,25 +153,24 @@ body {
     box-shadow: 0 5px #666;
 }
 
-
-#btn-logout{
-  width: 200px;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  font-size: 16px;
-  border-radius: 30px;
-  border: none;
-  padding: 15px 20px;
-  text-align: center;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-  position: fixed;
-  bottom: calc(50% - 250px);
-  left: calc(50% - 100px);
-  box-shadow: 0 5px #666;
+#btn-logout {
+    width: 200px;
+    background-color: transparent;
+    color: black;
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: calc(50% - 250px);
+    left: calc(50% - 100px);
+    box-shadow: 0 5px #666;
+    border-style: solid;
+    border-color: #9a9a9a;
 }
 
-#camera--trigger{
-
+#camera--trigger {
     width: 200px;
     background-color: black;
     color: white;
