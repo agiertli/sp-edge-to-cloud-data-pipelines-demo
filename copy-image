@@ -1,6 +1,6 @@
 # required to port-forward in different tab
-# oc port-forward svc/image-registry 5000 -n openshift-image-registry
+oc port-forward svc/image-registry 5000 -n openshift-image-registry
 # build the image like this mvn  install -Dquarkus.openshift.deploy=true
 skopeo copy docker://localhost:5000/deploy-image/shopper:1.0.0 dir:tmp --src-tls-verify=false --src-creds=admin:$(oc whoami -t)
 
-skopeo copy dir:tmp docker://quay.io/agiertli/shopper-keycloak:1.0.0 --dest-creds=agiertli:$QUAY_TOKEN
+skopeo copy dir:tmp docker://quay.io/agiertli/shopper-keycloak:1.0.11 --dest-creds=agiertli:$QUAY_TOKEN
