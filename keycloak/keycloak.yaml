@@ -83,6 +83,17 @@ objects:
                   value: "edge"
                 - name: KC_SPI_AI_ENGINE_PROVIDER
                   value: "${KEYCLOAK_AI_ENGINE}"
+                # OpenAI ChatGPT
+                - name: OPEN_AI_API_URL
+                  value: "${OPEN_AI_API_URL}"
+                - name: OPEN_AI_API_KEY
+                  value: "${OPEN_AI_API_KEY}"
+                - name: OPEN_AI_API_ORGANIZATION
+                  value: "${OPEN_AI_API_ORGANIZATION}"
+                - name: OPEN_AI_API_PROJECT
+                  value: "${OPEN_AI_API_PROJECT}"
+                - name: OPEN_AI_API_MODEL
+                  value: "${OPEN_AI_API_MODEL}"
               image: quay.io/mabartos/keycloak-adaptive-all:0.1.2
               livenessProbe:
                 failureThreshold: 100
@@ -144,11 +155,33 @@ parameters:
     generate: expression
     from: "[a-zA-Z0-9]{8}"
     required: true
+  # AI Engine
   - name: KEYCLOAK_AI_ENGINE
     displayName: Keycloak AI engine provider
     description: AI engine provider name used for risk evaluation - 'granite', or 'default' (OpenAI ChatGPT)
     required: false
     value: granite
+  # OpenAI ChatGPT Engine
+  - name: OPEN_AI_API_URL
+    displayName: Keycloak OpenAI API URL
+    required: false
+    value: https://api.openai.com/v1/chat/completions
+  - name: OPEN_AI_API_KEY
+    displayName: Keycloak OpenAI API key
+    required: true
+    value: your-api-key
+  - name: OPEN_AI_API_ORGANIZATION
+    displayName: Keycloak OpenAI API organization ID
+    required: true
+    value: your-organization-id
+  - name: OPEN_AI_API_PROJECT
+    displayName: Keycloak OpenAI API project ID
+    required: true
+    value: your-project-id
+  - name: OPEN_AI_API_MODEL
+    displayName: Keycloak OpenAI API model
+    required: false
+    value: gpt-3.5-turbo
   - name: HOSTNAME
     displayName: Custom Route Hostname
     description: >-
