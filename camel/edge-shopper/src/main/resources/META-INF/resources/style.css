@@ -8,6 +8,13 @@ body {
     overflow: hidden;
 }
 
+#denied {
+    text-align: center;
+    position: fixed;
+    bottom: calc(70%);
+    left: calc(50% - 135px);
+}
+
 #camera,
 #camera--view,
 #camera--sensor,

@@ -63,6 +63,10 @@ objects:
         spec:
           containers:
             - env:
+                - name: GRANITE_API_KEY
+                  value: sample123
+                - name: OPEN_AI_API_KEY
+                  value: sample123
                 - name: KEYCLOAK_ADMIN
                   value: "${KEYCLOAK_ADMIN}"
                 - name: KEYCLOAK_ADMIN_PASSWORD
@@ -78,7 +82,7 @@ objects:
                 - name: KC_PROXY
                   value: "edge"
                 - name: KC_SPI_AI_ENGINE_PROVIDER
-                  value: "${KEYCLOAK_AI_ENGINE}"  
+                  value: "${KEYCLOAK_AI_ENGINE}"
               image: quay.io/mabartos/keycloak-adaptive-all:0.1.2
               livenessProbe:
                 failureThreshold: 100
