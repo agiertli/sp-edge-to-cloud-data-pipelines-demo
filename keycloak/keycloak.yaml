@@ -77,6 +77,8 @@ objects:
                   value: "${KEYCLOAK_DB_URL}"
                 - name: KC_PROXY
                   value: "edge"
+                - name: KC_SPI_AI_ENGINE_PROVIDER
+                  value: "${KEYCLOAK_AI_ENGINE}"
               image: quay.io/mabartos/keycloak-adaptive-all:latest
               livenessProbe:
                 failureThreshold: 100
@@ -138,6 +140,11 @@ parameters:
     generate: expression
     from: "[a-zA-Z0-9]{8}"
     required: true
+  - name: KEYCLOAK_AI_ENGINE
+    displayName: Keycloak AI engine provider
+    description: AI engine provider name used for risk evaluation - 'granite', or 'default' (OpenAI ChatGPT)
+    required: false
+    value: granite
   - name: HOSTNAME
     displayName: Custom Route Hostname
     description: >-
