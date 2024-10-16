@@ -78,8 +78,8 @@ objects:
                 - name: KC_PROXY
                   value: "edge"
                 - name: KC_SPI_AI_ENGINE_PROVIDER
-                  value: "${KEYCLOAK_AI_ENGINE}"
-              image: quay.io/mabartos/keycloak-adaptive-all:latest
+                  value: "${KEYCLOAK_AI_ENGINE}"  
+              image: quay.io/mabartos/keycloak-adaptive-all:0.1.2
               livenessProbe:
                 failureThreshold: 100
                 httpGet:
