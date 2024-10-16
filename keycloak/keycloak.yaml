@@ -94,6 +94,13 @@ objects:
                   value: "${OPEN_AI_API_PROJECT}"
                 - name: OPEN_AI_API_MODEL
                   value: "${OPEN_AI_API_MODEL}"
+                # IBM Granite
+                - name: GRANITE_API_URL
+                  value: "${GRANITE_API_URL}"
+                - name: GRANITE_API_KEY
+                  value: "${GRANITE_API_KEY}"
+                - name: GRANITE_API_MODEL
+                  value: "${GRANITE_API_MODEL}"
               image: quay.io/mabartos/keycloak-adaptive-all:0.1.2
               livenessProbe:
                 failureThreshold: 100
@@ -182,6 +189,19 @@ parameters:
     displayName: Keycloak OpenAI API model
     required: false
     value: gpt-3.5-turbo
+  # IBM Granite Engine
+  - name: GRANITE_API_URL
+    displayName: Keycloak IBM Granite API URL
+    required: true
+    value: your-api-url
+  - name: GRANITE_API_KEY
+    displayName: Keycloak IBM Granite API key
+    required: true
+    value: your-api-key
+  - name: GRANITE_API_MODEL
+    displayName: Keycloak IBM Granite API model
+    required: false
+    value: granite-8b-code-instruct-128k
   - name: HOSTNAME
     displayName: Custom Route Hostname
     description: >-
