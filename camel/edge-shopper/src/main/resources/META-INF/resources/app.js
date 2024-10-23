@@ -323,8 +323,8 @@ function displayProducts(products) {
   label2 = "Tell us which is it:";
 
   if (mode == "ingestion") {
-    label1 = "Select category";
-    label2 = "(Choose from the list)";
+    label1 = "Vyberte produkt";
+    label2 = "(Zo zoznamu nižšie)";
   }
 
   productPicker.style.display = "inline";
@@ -371,7 +371,7 @@ function submitProduct() {
 
   storeHttp(cameraOutput.src, product);
 
-  displayMessage("Thank you!<br>[" + product + "]");
+  displayMessage("Ďakujeme!<br>[" + product + "]");
 
   // console.log('submitProduct in action');
   productPicker.style.display = "none";
