@@ -357,7 +357,9 @@ function displayProducts(products) {
 
 function updateLabel(select) {
   labelCategory.innerHTML =
-    "Training:<br>[" + select.options[select.selectedIndex].value + "]";
+    " Trénovanie modelu:<br>[" +
+    select.options[select.selectedIndex].value +
+    "]";
 }
 
 function closePicker() {
