@@ -4,3 +4,8 @@
 skopeo copy docker://localhost:5000/deploy-image/shopper:1.0.0 dir:tmp --src-tls-verify=false --src-creds=admin:$(oc whoami -t)
 
 skopeo copy dir:tmp docker://quay.io/agiertli/shopper-keycloak:1.0.0 --dest-creds=agiertli:$QUAY_TOKEN
+skopeo copy dir:tmp docker://quay.io/agiertli/shopper:1.0.4 --dest-creds=agiertli:$QUAY_TOKEN
+
+
+skopeo copy docker://localhost:5000/deploy-image/shopper:1.0.0 docker://quay.io/agiertli/shopper:1.0.6 --src-tls-verify=false --src-creds=admin:$(oc whoami -t) --dest-creds=agiertli:$QUAY_TOKEN
+skopeo copy docker://localhost:5000/deploy-image/shopper:1.0.0 docker://quay.io/agiertli/shopper-keycloak:1.0.17 --src-tls-verify=false --src-creds=admin:$(oc whoami -t) --dest-creds=agiertli:$QUAY_TOKEN
