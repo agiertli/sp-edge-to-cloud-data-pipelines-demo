@@ -323,8 +323,8 @@ function displayProducts(products) {
   label2 = "Tell us which is it:";
 
   if (mode == "ingestion") {
-    label1 = "Vyberte produkt";
-    label2 = "(Zo zoznamu nižšie)";
+    label1 = "Vyberte produkt zo zoznamu";
+    // label2 = "(Zo zoznamu nižšie)";
   }
 
   productPicker.style.display = "inline";
@@ -334,10 +334,10 @@ function displayProducts(products) {
     label1 +
     "</label>" +
     "<br/>" +
-    '<label for="lang">' +
-    label2 +
-    "</label>" +
-    "<br/>" +
+    // '<label for="lang">' +
+    // label2 +
+    // "</label>" +
+    // "<br/>" +
     "<br/>" +
     '<select name="products" id="product" onchange="updateLabel(this)">';
 
