@@ -357,7 +357,7 @@ function displayProducts(products) {
 
 function updateLabel(select) {
   labelCategory.innerHTML =
-    "Training:<br>[" + select.options[select.selectedIndex].value + "]";
+    "Nahrávanie dát:<br>[" + select.options[select.selectedIndex].value + "]";
 }
 
 function closePicker() {
