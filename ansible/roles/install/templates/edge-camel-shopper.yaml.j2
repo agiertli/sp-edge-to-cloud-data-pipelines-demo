@@ -80,10 +80,10 @@ spec:
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
             - name: QUARKUS_OIDC_AUTH_SERVER_URL
-              value: https://keycloak-https-keycloak.apps.cluster-9lvpb.9lvpb.sandbox1647.opentlc.com/realms/quarkus2
+              value: https://keycloak-https-keycloak.apps.cluster-942x9.942x9.sandbox1221.opentlc.com/realms/quarkus2
             - name: QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING
               value: "true"
-          #image: quay.io/agiertli/shopper:1.0.0
+          #image: quay.io/agiertli/shopper:1.0.1
           image: quay.io/agiertli/shopper-keycloak:1.0.16
           imagePullPolicy: IfNotPresent
           livenessProbe:
