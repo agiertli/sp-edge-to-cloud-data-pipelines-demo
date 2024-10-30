@@ -76,10 +76,10 @@
             <artifactId>camel-quarkus-core</artifactId>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-oidc</artifactId>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>org.apache.camel.quarkus</groupId>

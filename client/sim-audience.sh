@@ -2,11 +2,11 @@
 
 # Camel Shopper
 # server=http://localhost:8080/
-server=https://camel-edge-edge1.apps.cluster-c5qg7.sandbox2014.opentlc.com
+server=https://camel-edge-edge1.apps.cluster-942x9.942x9.sandbox1221.opentlc.com
 
 
-for filename in ../dataset-new/images/tea-green/*; do
-    
+for filename in ../dataset/images/tea-lemon/*; do
+
     image="$filename"
 
     echo "$image"
