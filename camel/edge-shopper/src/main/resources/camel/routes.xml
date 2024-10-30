@@ -46,7 +46,7 @@
         <to uri="direct:main"/>
         <!-- <convertBodyTo type="String"/> -->
     </route>
-    
+
     <!-- JSON (HTTP) entry point -->
     <route id="http-consumer">
         <from uri="platform-http:/detection"/>
@@ -57,7 +57,7 @@
         <to uri="direct:main"/>
         <to uri="direct:prepare-response"/>
     </route>
-    
+
     <!-- JSON (HTTP) entry point -->
     <route id="http-consumer-ingest">
         <from uri="platform-http:/ingestion"/>
@@ -72,7 +72,7 @@
         <unmarshal>
             <json/>
         </unmarshal>
-        <log message="incoming HTTP request for INGESTION: ${body[product]}"/>       
+        <log message="incoming HTTP request for INGESTION: ${body[product]}"/>
         <setProperty name="job-origin">
             <constant>"origin":"http"</constant>
         </setProperty>
@@ -142,7 +142,7 @@
     <route id="http-consumer-ingest-options">
         <from uri="platform-http:/ingestion/options"/>
 
-        <log message="incoming HTTP request for INGESTION OPTIONS"/>       
+        <log message="incoming HTTP request for INGESTION OPTIONS"/>
         <setProperty name="job-origin">
             <constant>"origin":"http"</constant>
         </setProperty>
@@ -199,7 +199,7 @@
                 {
                     "known":"${exchangeProperty.known}",
                     "pricetag":"${exchangeProperty.pricetag}",
-                    "products":${body} 
+                    "products":${body}
                 }
             </simple>
         </setBody>
@@ -376,7 +376,7 @@
         <setHeader name="CamelAwsS3Key">
             <simple>images/${exchangeProperty.product}/${date:now:yyyy-MM-dd_HH-mm-ss-SSS}.jpg</simple>
         </setHeader>
-    
+
         <setHeader name="CamelAwsS3ContentType">
             <simple>image/jpeg</simple>
         </setHeader>
@@ -463,7 +463,7 @@
 
         <setProperty name="job-price">
             <!-- Double dollar: 1st currency, 2nd obtain variable's value  -->
-            <simple>"price":"$${body[price]}"</simple>
+            <simple>"price":"zł${body[price]}"</simple>
         </setProperty>
     </route>
 
@@ -497,7 +497,7 @@
 
         <when>
             <simple>${exchangeProperty.topic-response} != null</simple>
-     
+
             <to uri="direct:prepare-response"/>
 
             <setHeader name="CamelPahoOverrideTopic">
@@ -531,7 +531,7 @@
 
             <wireTap uri="direct:process-S3-file"/>
 
-<!-- 
+<!--
             <setProperty name="s3entry">
                 <simple>${body.key}</simple>
             </setProperty>
@@ -670,7 +670,7 @@
 <!--         <marshal>
             <zipFile/>
         </marshal>
- -->    
+ -->
     </route>
 
 
