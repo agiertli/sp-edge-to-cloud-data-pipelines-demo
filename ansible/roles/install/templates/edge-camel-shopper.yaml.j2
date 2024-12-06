@@ -6,11 +6,11 @@ metadata:
 data:
   training-options.json: |
     [
-          {
-        "item": "grzeski",
-        "label": "Grzeski"
-      },
 
+      {
+        "item": "horalky",
+        "label": "Horalky"
+      },
       {
         "item": "tea-green",
         "label": "(Bali) Green Tea"
@@ -79,12 +79,8 @@ spec:
                   fieldPath: metadata.namespace
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
-            - name: QUARKUS_OIDC_AUTH_SERVER_URL
-              value: https://keycloak-https-keycloak.apps.cluster-9lvpb.9lvpb.sandbox1647.opentlc.com/realms/quarkus2
-            - name: QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING
-              value: "true"
-          #image: quay.io/agiertli/shopper:1.0.0
-          image: quay.io/agiertli/shopper:1.0.4_pl
+          # image: quay.io/bmesegue/testshopper:1.0.0
+          image: quay.io/redhatintegration/sp-ai-camel-shopper:1.0.0
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3

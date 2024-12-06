@@ -14,6 +14,3 @@ subscription_versions_for_ocp:
   "4.12":
     odf: 
       channel: "stable-4.12"
-  "4.16":
-    odf: 
-      channel: "stable-4.16"      

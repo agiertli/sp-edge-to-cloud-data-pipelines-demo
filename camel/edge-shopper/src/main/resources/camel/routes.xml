@@ -9,7 +9,7 @@
 
 
     <!-- MQTT entry point -->
-    <route id="mqtt-consumer">
+  <route id="mqtt-consumer">
         <from uri="{{mqtt.uri}}"/>
         <log message="got MQTT image from: ${header.CamelMqttTopic}"/>
 

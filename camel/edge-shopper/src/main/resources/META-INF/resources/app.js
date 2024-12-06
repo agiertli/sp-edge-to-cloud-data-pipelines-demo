@@ -323,7 +323,7 @@ function displayProducts(products) {
   label2 = "Tell us which is it:";
 
   if (mode == "ingestion") {
-    label1 = "Wybierz produkt z listy";
+    label1 = "Vyberte produkt zo zoznamu";
     // label2 = "(Zo zoznamu nižšie)";
   }
 
@@ -357,9 +357,7 @@ function displayProducts(products) {
 
 function updateLabel(select) {
   labelCategory.innerHTML =
-    "Przesyłanie danych:<br>[" +
-    select.options[select.selectedIndex].value +
-    "]";
+    "Nahrávanie dát:<br>[" + select.options[select.selectedIndex].value + "]";
 }
 
 function closePicker() {
@@ -373,7 +371,7 @@ function submitProduct() {
 
   storeHttp(cameraOutput.src, product);
 
-  displayMessage("Dziękuję!<br>[" + product + "]");
+  displayMessage("Ďakujeme!<br>[" + product + "]");
 
   // console.log('submitProduct in action');
   productPicker.style.display = "none";
