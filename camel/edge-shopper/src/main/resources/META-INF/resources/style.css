@@ -116,7 +116,7 @@ body {
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
-    bottom: calc(54%);
+    bottom: calc(55%);
     left: calc(50% - 100px);
     box-shadow: 0 5px #ed1c25;
 }
@@ -132,7 +132,7 @@ body {
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
-    bottom: calc(53% - 60px);
+    bottom: calc(54% - 60px);
     left: calc(50% - 100px);
     box-shadow: 0 5px #ed1c25;
 }
