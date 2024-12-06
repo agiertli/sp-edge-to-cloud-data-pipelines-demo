@@ -1,0 +1,56 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://api.cluster-gwvdt.gwvdt.sandbox1537.opentlc.com:6443
+  name: api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+- cluster:
+    server: https://api.cluster-p576d.p576d.sandbox562.opentlc.com:6443
+  name: api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://api.cluster-tfln4.tfln4.sandbox178.opentlc.com:6443
+  name: api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+contexts:
+- context:
+    cluster: api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+    namespace: copy-image
+    user: admin/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+  name: copy-image/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+    namespace: default
+    user: admin/api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+  name: default/api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+    namespace: default
+    user: admin/api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+  name: default/api-cluster-p576d-p576d-sandbox562-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+    namespace: default
+    user: admin/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+  name: default/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+    namespace: deploy-image
+    user: admin/api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+  name: deploy-image/api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443/admin
+- context:
+    cluster: api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+    namespace: deploy-image
+    user: admin/api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+  name: deploy-image/api-cluster-p576d-p576d-sandbox562-opentlc-com:6443/admin
+current-context: copy-image/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443/admin
+kind: Config
+preferences: {}
+users:
+- name: admin/api-cluster-gwvdt-gwvdt-sandbox1537-opentlc-com:6443
+  user:
+    token: sha256~v1dYFVq7zz3HPvcU5mVM6PX1rwjFfRcWriZYA6NTqJo
+- name: admin/api-cluster-p576d-p576d-sandbox562-opentlc-com:6443
+  user:
+    token: sha256~yNkq894t1OW2hqxR6J1CMuUWxqrp18NM0pezbaq5kxQ
+- name: admin/api-cluster-tfln4-tfln4-sandbox178-opentlc-com:6443
+  user:
+    token: sha256~6GFOr0AKa-wkuZo8w96BOYlyaB2MO4Do9R0OgTrRf74
