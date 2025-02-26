@@ -19,17 +19,17 @@ spec:
   dbType: postgres
   dbVolumeResources:
     requests:
-      storage: 1Gi
+      storage: 2Gi
   endpoints:
-    maxCount: 10
-    minCount: 1
+    maxCount: 8
+    minCount: 8
     resources:
       limits:
+        cpu: 1
+        memory: 1Gi
+      requests:
         cpu: 500m
         memory: 512Mi
-      requests:
-        cpu: 50m
-        memory: 256Mi
   region: storage
   security:
     kms: {}
