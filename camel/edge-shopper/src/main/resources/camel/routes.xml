@@ -463,7 +463,7 @@
 
         <setProperty name="job-price">
             <!-- Double dollar: 1st currency, 2nd obtain variable's value  -->
-            <simple>"price":"${body[price]} €"</simple>
+            <simple>"price":"${body[price]} CZK"</simple>
         </setProperty>
     </route>
 

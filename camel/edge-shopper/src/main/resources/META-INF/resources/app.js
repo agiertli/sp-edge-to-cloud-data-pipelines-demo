@@ -323,7 +323,7 @@ function displayProducts(products) {
   label2 = "Tell us which is it:";
 
   if (mode == "ingestion") {
-    label1 = "Vyberte produkt zo zoznamu";
+    label1 = "Vyberte produkt ze seznamu";
     // label2 = "(Zo zoznamu nižšie)";
   }
 
@@ -357,7 +357,7 @@ function displayProducts(products) {
 
 function updateLabel(select) {
   labelCategory.innerHTML =
-    "Nahrávanie dát:<br>[" + select.options[select.selectedIndex].value + "]";
+    "Nahrávání dat:<br>[" + select.options[select.selectedIndex].value + "]";
 }
 
 function closePicker() {
@@ -371,7 +371,7 @@ function submitProduct() {
 
   storeHttp(cameraOutput.src, product);
 
-  displayMessage("Ďakujeme!<br>[" + product + "]");
+  displayMessage("Děkujeme!<br>[" + product + "]");
 
   // console.log('submitProduct in action');
   productPicker.style.display = "none";
