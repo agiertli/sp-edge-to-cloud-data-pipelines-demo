@@ -107,7 +107,7 @@ body {
 
 #btn-detection {
     width: 200px;
-    background-color: #ff42f8;
+    background-color: #bc111a;
     color: white;
     font-size: 16px;
     border-radius: 30px;
@@ -118,12 +118,12 @@ body {
     position: fixed;
     bottom: calc(55%);
     left: calc(50% - 100px);
-    box-shadow: 0 5px #ed1c25;
+    box-shadow: 0 5px #ff42f8;
 }
 
 #btn-ingestion {
     width: 200px;
-    background-color: #ff42f8;
+    background-color: #bc111a;
     color: white;
     font-size: 16px;
     border-radius: 30px;
@@ -134,7 +134,7 @@ body {
     position: fixed;
     bottom: calc(54% - 60px);
     left: calc(50% - 100px);
-    box-shadow: 0 5px #ed1c25;
+    box-shadow: 0 5px #ff42f8;
 }
 
 #btn-monitor {
